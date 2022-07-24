@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Home page</title>
+    <script src="https://unpkg.com/vue"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="src/images/netflix_logo_icon_170919.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/home.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="home-page">
+
+        <div class="navbar navbar-expand ">
+            <div class="nav" id="nav">
+                <img src="src/images/Logonetflix.png" alt="Picture" class="nav_logo">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tv-shows">Tv Shows</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#movies">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#originals">Originals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recently-added">Recently Added</a>
+                        </li>
+                    </ul>
+                </div>
+                <i class="bi-person">Username</i><br>
+                <button id="click">Logout</button>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="banner_contents">
+                <h1 class="banner_title">Red Notice</h1>
+                <div class="banner_buttons">
+                   <button class="banner_button">Play</button>
+                    <button class="banner_button">My List</button>
+                </div>
+                <div class="banner_description">
+                    "When an Interpol-issued Red Notice the highest level warrant to hunt and capture the world's most
+                    wanted goes out, "
+                    + "the FBI's top profiler John Hartley (Dwayne Johnson) is on the case. His global pursuit finds him
+                    smack dab in the "
+                    + "middle of a daring heist where he's forced to partner with the world's greatest art thief Nolan
+                    Booth (Ryan Reynolds) "
+                    + "in order to catch the world's most wanted art thief, 'The Bishop' (Gal Gadot). The high-flying
+                    adventure that ensues "
+                    + "takes the trio around the world, across the dance floor, trapped in a secluded prison, into the
+                    jungle and, worst of all "
+                    + "for them, constantly into each other's company.",
+                </div>
+            </div>
+            <div class="banner--fadeBottom"></div>
+        </div>
+
+        <div class="row">
+            <h2>TV Shows</h2>
+            <div id="tv-shows">
+                <div class="row_posters">
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div class="button">
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMzk4OTM2NzMzNl5BMl5BanBnXkFtZTgwNTAzNDE0NDE@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BOWI5YTUxOWEtZmRiZS00ZmQxLWE2NzctYTRiODA2NzE1ZjczXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BOGEwMTQyMDktMWUwZC00MzExLTg1MGMtYWJiNWNhMzIyMGU5XkEyXkFqcGdeQXVyOTYyMTY2NzQ@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                    <div class="posters">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg"
+                            alt="movie" class="image row_posterLarge">
+                        <div>
+                            <button class="enter">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Movies</h2>
+            <div id="movies">
+                <div class="row_posters">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYjg4ZjUzMzMtYzlmYi00YTcwLTlkOWUtYWFmY2RhNjliODQzXkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTcyMTMzNzE5N15BMl5BanBnXkFtZTcwNzg5NjM5Nw@@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMzk4OTM2NzMzNl5BMl5BanBnXkFtZTgwNTAzNDE0NDE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYzdlMTMyZWQtZWNmMC00MTJiLWIyMWMtM2ZlZDdlYzZhNTc0XkEyXkFqcGdeQXVyMTMzNDE5NDM2._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYjQ1NzRhYjYtMWY3My00ODA0LTk5ZDctYjQ4YjE0M2RhMGNiXkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Originals</h2>
+            <div id="originals">
+                <div class="row_posters">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNWU2NzEyMDYtM2MyOS00OGM3LWFkNzAtMzRiNzE2ZjU5ZTljXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNjcxMjg1Njg2NF5BMl5BanBnXkFtZTcwMjQ4NzMzMw@@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTU5Nzg2OTk2NF5BMl5BanBnXkFtZTYwNTc1ODM3._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTNkNWIwNGUtNTJlOC00NDU3LTk0NWEtNjNjNDM4NzRiNThkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNDgxNjZlZDYtZGJmZC00Mjg0LWEwYzctYWQ0MWFjNTM3ZmM4XkEyXkFqcGdeQXVyNTM5NzI0NDY@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTYzODQzYjQtNTczNC00MzZhLTg1ZWYtZDUxYmQ3ZTY4NzA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTk4NTk4MTk1OF5BMl5BanBnXkFtZTcwNTE2MDIwNA@@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Recently Added</h2>
+            <div id="recently-added">
+                <div class="row_posters">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTQ2ODFlMDAtNzdhOC00ZDYzLWE3YTMtNDU4ZGFmZmJmYTczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTYxMzYwODE4OV5BMl5BanBnXkFtZTgwNDE5MzE2MDE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTgxOTYxMTg3OF5BMl5BanBnXkFtZTgwMDgyMzA2NDE@._V1_SX300.jpg"
+                        alt="movie" class="image">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNjI4ZTQ1OTYtNTI0Yi00M2EyLThiNjMtMzk1MmZlOWMyMDQwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg"
+                        alt="movie" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="src/js/home.js"></script>
+</body>
+
+</html>
