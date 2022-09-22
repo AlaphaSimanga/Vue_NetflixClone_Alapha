@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the webpage-->
+    <title>Netflix Home</title>
+    <!--Link for the netflix logo icon-->
+    <link rel="shortcut icon" href="src/images/netflix_logo_icon_170919.png" type="image/x-icon">
+    <!--Link for the CSS stylesheet-->
+    <link rel="stylesheet" href="css/netflix_home.css">
+</head>
+
+<body>
+    <div id="app-landing">
+        <header>
+            <div class="navbar navbar-expand ">
+                <div class="nav" id="nav">
+                    <img src="https://i.ibb.co/r5krrdz/logo.png" alt="" class="nav_logo">
+                    <a href="src/pages/MovieDetail.html"></a>
+
+                    <!--Search button-->
+                    <form class="search-box">
+                        <input id="searchText" v-model="searchInput.searchText" type="text"
+                            placeholder="Enter Your Search" required>
+                        <input id="searchButton" type="button" value="Search" v-on:click="theSearch">
+                    </form>
+                    <div class="topnav-right">
+                        <!--When the user clicks the logout button, they should be redirected to the sign in webpage-->
+                        <a href="sign_in.html" class="logout">Logout</a>
+
+                        <div v-show="!searched" class="movies-list">
+                            <span></span>
+                        </div>
+
+                        <div>
+                            <h1 v-if="fullList" class="fullListClass">Watchlist is full</h1>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </header>
+
+        <!--Banner-->
+        <div class="banner" @mouseOver="hoverTrack = true" @mouseleave="hoverTrack = false">
+            <div class="banner__contents">
+                <h1 class="banner__title">{{title}}</h1>
+                <div class="banner__buttons"></div>
+                <th style="direction:ltr; padding: top 2em; text-align:center; padding-right:0"
+                    class="col-lg-4 col-md-6">
+                    <h3 class="banner__description">
+                        {{description}}
+                    </h3>
+                </th>
+
+            </div>
+            <div class="banner__fadeBottom"></div>
+
+            <!--Unordered list of the movie genres-->
+            <ul>
+                <li><a href="#Drama" v-on:click="theDrama">Drama</a></li>
+                <li><a href="#Comedy" v-on:click="theComedy">Comedy</a></li>
+                <li><a href="#Adventure" v-on:click="theAdventure">Adventure</a></li>
+                <li><a href="#Crime" v-on:click="theCrime">Crime</a></li>
+            </ul>
+
+            <div class="movies">
+                <div v-for="movie in movies">
+                    <h1>{{movie.title}}</h1>
+                </div>
+            </div>
+
+            <!--Search-->
+            <div v-show="searched" class="movies-list row__posters">
+                <div v-for="(event, index) in filteredMoviesTitle" class="movie row__poster">
+                    <a class="movie-link">
+                        <div class="product-image">
+                            <img :src="event.Poster" alt="Movie Poster">
+                            <div class="type" style="color:white;">{{event.Genre}}</div>
+                            <div class="type2" style="color:white;">{{event.ReleaseDate}}</div>
+                            <div class="type3" style="color:white;">
+                                <button v-on:click="addToWatchList(event)">Add</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Drama-->
+            <div v-show="drama" class="movies-list row__posters">
+                <div v-for="(event, index) in filteredDrama" class="movie row__poster">
+                    <a class="movie-link">
+                        <div class="product-image">
+                            <img :src="event.Poster" alt="Movie Poster">
+                            <div class="type" style="color:white;">{{event.Genre}}</div>
+                            <div class="type2" style="color:white;">{{event.ReleaseDate}}</div>
+                            <div class="type3" style="color:white;">
+                                <button v-on:click="addToWatchList(event)">Add</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Comedy-->
+            <div v-show="comedy" class="movies-list row__posters">
+                <div v-for="(event, index) in filteredDrama" class="movie row__poster">
+                    <a class="movie-link">
+                        <div class="product-image">
+                            <img :src="event.Poster" alt="Movie Poster">
+                            <div class="type" style="color:white;">{{event.Genre}}</div>
+                            <div class="type2" style="color:white;">{{event.ReleaseDate}}</div>
+                            <div class="type3" style="color:white;">
+                                <button v-on:click="addToWatchList(event)">Add</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Adventure-->
+            <div v-show="adventure" class="movies-list row__posters">
+                <div v-for="(event, index) in filteredDrama" class="movie row__poster">
+                    <a class="movie-link">
+                        <div class="product-image">
+                            <img :src="event.Poster" alt="Movie Poster">
+                            <div class="type" style="color:white;">{{event.Genre}}</div>
+                            <div class="type2" style="color:white;">{{event.ReleaseDate}}</div>
+                            <div class="type3" style="color:white;">
+                                <button v-on:click="addToWatchList(event)">Add</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Crime-->
+            <div v-show="crime" class="movies-list row__posters">
+                <div v-for="(event, index) in filteredDrama" class="movie row__poster">
+                    <a class="movie-link">
+                        <div class="product-image">
+                            <img :src="event.Poster" alt="Movie Poster">
+                            <div class="type" style="color:white;">{{event.Genre}}</div>
+                            <div class="type2" style="color:white;">{{event.ReleaseDate}}</div>
+                            <div class="type3" style="color:white;">
+                                <button v-on:click="addToWatchList(event)">Add</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Coming Soon-->
+            <div class="row">
+                <h2>COMING SOON</h2>
+                <div class="movies-list row__posters">
+                    <div v-for="(event, index) in filteredMoviesComingSoon" class="movie row__poster row__posterLarge">
+                        <a class="movie-link">
+                            <div class="product-image">
+                                <img :src="event.Poster" alt="Movie Poster" v-on:click="changeBanner(event)">
+                                <div class="type">{{event.Genre}}</div>
+                                <div class="type3">{{event.ReleaseDate}}</div>
+                                <div class="type3">
+                                    <button v-on: click="addToWatchList (event)">Add</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--On Show-->
+            <div class="row">
+                <h2>On Show</h2>
+                <div class="movies-list row__posters">
+                    <div v-for="(event, index) in filteredMoviesComingSoon" class="movie row__poster row__posterLarge">
+                        <a class="movie-link">
+                            <div class="product-image">
+                                <img :src="event.Poster" alt="Movie Poster" v-on:click="changeBanner(event)">
+                                <div class="type">{{event.Genre}}</div>
+                                <div class="type3">{{event.ReleaseDate}}</div>
+                                <div class="type3">
+                                    <button v-on: click="addToWatchList (event)">Add</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--WatchList-->
+            <div class="row">
+                <h2>WatchList</h2>
+                <div class="movies-list row__posters">
+                    <div v-for="(event, index) in filteredMoviesComingSoon" class="movie row_poster row__posterLarge">
+                        <a class="movie-link">
+                            <div class="product-image">
+                                <img :src="event.Poster" alt="Movie Poster" v-on:click="changeBanner(event)">
+                                <div class="type">{{event.Genre}}</div>
+                                <div class="type3">{{event.ReleaseDate}}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Vue scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+
+    <!--Link for JavaScript-->
+    <script src="js/netflix_home.js"></script>
+
+</body>
+
+</html>

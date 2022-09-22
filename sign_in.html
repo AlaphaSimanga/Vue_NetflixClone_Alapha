@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the webpage-->
+    <title>Netflix </title>
+    <!--Link for the netflix logo icon-->
+    <link rel="shortcut icon" href="src/images/netflix_logo_icon_170919.png" type="image/x-icon">
+    <!--Link for the CSS stylesheet-->
+    <link rel="stylesheet" href="css/sign_in.css">
+</head>
+
+<body>
+
+    <div id="app-login">
+        <header class="showcase">
+            <div class="logo">
+                <img src="https://i.ibb.co/r5krrdz/logo.png" alt="netflix-logo">
+            </div>
+
+            <div class="showcase-content">
+                <div class="form">
+                    <h1>Sign In</h1>
+                    <div class="info">
+                        <input class="email" type="email" v-model="input.username" placeholder="Email or phone number">
+                        <br>
+                        <input class="email" type="password" v-model="input.password" placeholder="Password"><br>
+
+                    </div>
+
+                    <div class="btn">
+                        <!--When the user clicks sign in button, they should be directed to the netflix home page-->
+                        <button class="btn-primary" v-on:click="login()">Sign In</button>
+                    </div>
+                    <div class="help">
+                        <div>
+                            <input value="true" type="checkbox"><label>Remember me</label>
+                        </div>
+                        <div>
+                            <a href="https://www.netflix.com/dz-en/LoginHelp">Need help?</a>
+                        </div>
+
+                    </div>
+                    <div class="signup">
+                        <!--When the user clicks the sign up now link they should be directed to the sign up webpage-->
+                        <p>New to Netflix?<a href="sign_up.html">Sign up now</a></p>
+
+                    </div>
+                    <div class="more">
+                        <p><span>This page is protected by Google reCAPTCHA to ensure you're not a bot. </span><a
+                                href="#">Learn more.</a></p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="ftr-content">
+                    <div class="contact">
+                        <a href="#">Questions? Contact 0 801-000-723.</a>
+                    </div>
+                    <ul class="ftr">
+                        <a href="#">FAQ</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Cookie Preferences</a>
+                        <a href="#">Corporate Information</a>
+                    </ul>
+                </div>
+            </footer>
+
+
+        </header>
+    </div>
+
+    <!--Vue scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+
+    <!--Link for JavaScript-->
+    <script src="js/sign_in.js"></script>
+
+
+</body>
+
+</html>
